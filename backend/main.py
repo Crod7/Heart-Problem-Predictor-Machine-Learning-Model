@@ -20,7 +20,7 @@ app.add_middleware(
 # Root Endpoint
 @app.get("/", tags=["Main"])
 async def get_customers():
-    response = {"message": "hi"}
+    response = {"message": "Starting Server..."}
     return response
 
 
