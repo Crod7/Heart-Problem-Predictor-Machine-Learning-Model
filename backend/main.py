@@ -2,8 +2,7 @@
 from fastapi import FastAPI, Body, HTTPException
 from fastapi.encoders import jsonable_encoder
 from fastapi.middleware.cors import CORSMiddleware
-
-# from routes import customers
+from routes import model_rfc
 
 
 # Init the server
@@ -25,5 +24,5 @@ async def get_customers():
     return response
 
 
-# Manages all Customer Endpoints, see customers.py in route folder
-# app.include_router(customers.router, prefix="/api/customers")
+# Manages endpoint
+app.include_router(model_rfc.router, prefix="/api")
