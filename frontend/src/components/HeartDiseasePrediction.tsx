@@ -6,8 +6,8 @@ import { setLoadingScreen } from '@/src/store/loadingScreenSlice';
 
 
 interface PredictionResult {
-    message: number[];
-    probabilities: number[][];
+    message: string[];
+    probabilities: string[];
 }
 
 const HeartDiseasePrediction: React.FC = () => {
@@ -29,7 +29,7 @@ const HeartDiseasePrediction: React.FC = () => {
         thal: 0,
     });
 
-    const [result, setResult] = useState<PredictionResult | null>(null);
+    const [result, setResult] = useState<PredictionResult | null | string>(null);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFormData({
@@ -45,8 +45,12 @@ const HeartDiseasePrediction: React.FC = () => {
             const response = await axios.get<PredictionResult>('https://heart-ml-api.onrender.com/api/model_rfc', {
                 params: formData,
             });
-
-            setResult(response.data);
+            console.log(response.data)
+            // Parse the response data before setting it in the state
+            setResult({
+                message: response.data.message,
+                probabilities: response.data.probabilities
+            });
         } catch (error) {
             console.error('Error predicting:', error);
         }
@@ -57,8 +61,8 @@ const HeartDiseasePrediction: React.FC = () => {
     useEffect(() => {
         const startServer = async () => {
             try {
-                const response = await axios.get<PredictionResult>('https://heart-ml-api.onrender.com/');
-                console.log('Server started: ', response)
+                const serverStart = await axios.get<PredictionResult>('https://heart-ml-api.onrender.com/');
+                console.log('Server started: ', serverStart)
             } catch (error) {
                 console.error('Error starting server:', error);
             }
@@ -68,8 +72,8 @@ const HeartDiseasePrediction: React.FC = () => {
 
     return (
         <div>
-            <h1>Heart Disease Prediction Form</h1>
-            <div className='flex'>
+            <div className='text-5xl text-center p-6 font-extrabold'>Heart Disease Prediction Model</div>
+            <div className='flex px-10'>
                 <div className='w-[50%] min-w-[600px]'>
                     <div className='py-1 px-2 flex'>
                         Age:
@@ -138,20 +142,58 @@ const HeartDiseasePrediction: React.FC = () => {
 
 
                 </div>
-                <div>
-                    <button className='border p-3 rounded-lg bg-green-700 font-bold' type="button" onClick={predict}>
-                        Predict
-                    </button>
+                <div className='w-full flex items-center justify-center px-10'>
+                    <div className='bg-blue-900 p-10 rounded-xl'>
+                        <div className='text-3xl font-extrabold py-4'>Model's Prediction</div>
+                        {result && (
+                            <div>
+
+                                {typeof result === 'string' ? (
+                                    <div>{result}</div>
+                                ) : (
+                                    <div>
+                                        <div className='py-4'>
+                                            <div className='font-bold'>Result:</div>
+
+                                            <div className={`${Number(result.message) === 0 ? "text-green-400" : "text-red-500"} text-md font-bold`}>
+                                                {Number(result.message) === 0 ? "You most likley don't have heart related problems." : "You likley have heart related problems."}
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className='font-bold'>Probabilities:</div>
+                                            {result && (
+                                                <div>
+                                                    {result.probabilities.map((probability, index) => (
+                                                        <div>
+                                                            {probability ? (
+                                                                probability.toString().split('.').pop()?.trim().length === 1
+                                                                    ? `This probablity that you have heart disease is ${probability.toString().split('.').pop()?.trim()}0%`
+                                                                    : `This probablity that you have heart disease is ${probability.toString().split('.').pop()?.trim()}%.`
+                                                            ) : (
+                                                                'N/A'
+                                                            )}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                        <div className='py-10'>
+                            <button className='border py-3 px-8 rounded-lg bg-green-600 font-bold' type="button" onClick={predict}>
+                                Predict
+                            </button>
+                        </div>
+                    </div>
                 </div>
+
             </div>
 
 
-            {result && (
-                <div>
-                    <h2>Result:</h2>
-                    <pre>{JSON.stringify(result, null, 2)}</pre>
-                </div>
-            )}
+
         </div>
     );
 };
