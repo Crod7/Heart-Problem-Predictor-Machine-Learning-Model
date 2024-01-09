@@ -1,0 +1,36 @@
+# Ignore files in the ml_model directory
+ml_model/*.log
+ml_model/__pycache__/
+
+# Ignore Jupyter Notebook checkpoints in ml_model
+ml_model/**/*.ipynb_checkpoints/
+
+# Exclude specific files in ml_model
+ml_model/*
+!ml_model/models/
+!ml_model/images/
+!ml_model/data/
+
+# Exclude all files in ml_model/csv, but not the folder itself
+ml_model/csv/*
+!ml_model/csv/
+
+# Exclude all files in ml_model, but not the models folder
+!ml_model/*.ipynb
+!ml_model/models/*.ipynb
+
+# Ignore other generic files
+.DS_Store
+
+# Exclude virtual environment directory
+/env/
+
+# Ignore node_modules in the Frontend
+Frontend/node_modules/
+
+# Ignore build artifacts in the Frontend
+Frontend/build/
+Frontend/dist/
+
+# Ignore .env files in the Frontend (if you have sensitive information)
+Frontend/.env*
