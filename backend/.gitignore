@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+/.venv
+
+# .vscode directory
+.vscode/
+
+# IDE files
+.idea/
+
+# Compiled Python files
+*.pyc
+
+# Compiled Python files
+*.pyc
+
+# Logs
+*.log
+
+# Local development configuration
+.env
+
+# Docker files
+Dockerfile
+docker-compose.yml
+
+# Ignore local SQLite database file
+*.sqlite
+
+# Ignore local dependencies
+lib/
+lib64/
