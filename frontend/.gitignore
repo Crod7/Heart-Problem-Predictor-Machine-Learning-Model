@@ -22,34 +22,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Node.js
-node_modules/
-
-# Compiled files
-build/
-dist/
-*.css
-*.map
-
-# Logs and databases
-*.log
-*.sqlite
-*.log*
-npm-debug.log*
-
-# Environment variables
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# IDE files
-.vscode/
-.idea/
-
-# Dependency directory
-.pnpm/
-
-# OS generated files
-.DS_Store
-Thumbs.db
