@@ -63,6 +63,7 @@ const HeartDiseasePrediction: React.FC = () => {
             console.log('Warming up server')
             try {
                 const serverStart = await axios.get<PredictionResult>('https://heart-ml-api.onrender.com/');
+                console.log('Server done loading: ', serverStart)
             } catch (error) {
                 console.error('Error starting server:', error);
             }
