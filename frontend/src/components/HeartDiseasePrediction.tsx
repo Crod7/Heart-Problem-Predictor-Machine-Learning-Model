@@ -73,71 +73,150 @@ const HeartDiseasePrediction: React.FC = () => {
     return (
         <div>
             <div className='text-5xl text-center p-6 font-extrabold'>Heart Disease Prediction Model</div>
-            <div className='flex px-10'>
+            <div className='flex p-8'>
                 <div className='w-[50%] min-w-[600px]'>
                     <div className='py-1 px-2 flex'>
-                        Age:
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="age" value={formData.age} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Age:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Age of the patient in years
+                            </div>
+                        </div>
+
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="age" value={formData.age} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Sex (0-Male, 1-Female):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="sex" min="0" max="1" value={formData.sex} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Sex:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Gender of the patient (0 = male, 1 = female)
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="sex" min="0" max="1" value={formData.sex} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Chest Pain (0-3):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="chest_pain" min="0" max="3" value={formData.chest_pain} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Chest Pain:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Chest pain type:
+                                0: Typical angina
+                                1: Atypical angina
+                                2: Non-anginal pain
+                                3: Asymptomatic
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="chest_pain" min="0" max="3" value={formData.chest_pain} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Resting Blood Pressure (100-150):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="resting_blood_pressure" min="100" max="150" value={formData.resting_blood_pressure} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Resting Blood Pressure:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Resting blood pressure in mm Hg (100-150)
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="resting_blood_pressure" min="100" max="150" value={formData.resting_blood_pressure} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Cholesterol (130-350):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="chol" min="130" max="350" value={formData.chol} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Cholesterol:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Serum cholesterol in mg/dl (130-350)
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="chol" min="130" max="350" value={formData.chol} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Fasting Blood Sugar (0 or 1):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="fbs" min="0" max="1" value={formData.fbs} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Fasting Blood Sugar:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Fasting blood sugar level, categorized as above 120 mg/dl (1 = true, 0 = false)
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="fbs" min="0" max="1" value={formData.fbs} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Rest ECG (0 or 1):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="rest_ecg" min="0" max="1" value={formData.rest_ecg} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Rest ECG:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Resting electrocardiographic results:
+                                0: Normal
+                                1: Having ST-T wave abnormality
+                                2: Showing probable or definite left ventricular hypertrophy
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="rest_ecg" min="0" max="1" value={formData.rest_ecg} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Maximum Heart Rate (Thalach) (80-200):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="thalach" min="80" max="200" value={formData.thalach} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Maximum Heart Rate:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Maximum heart rate achieved during a stress test (80-200)
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="thalach" min="80" max="200" value={formData.thalach} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Exercise-Induced Angina (0 or 1):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="exang" min="0" max="1" value={formData.exang} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Exercise-Induced Angina:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Exercise-induced angina (1 = yes, 0 = no)
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="exang" min="0" max="1" value={formData.exang} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Oldpeak (0.0 - 3.5):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="oldpeak" step="0.1" min="0.0" max="3.5" value={formData.oldpeak} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Oldpeak:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                ST depression induced by exercise relative to rest (0.0-3.5)                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="oldpeak" step="0.1" min="0.0" max="3.5" value={formData.oldpeak} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Slope of the Peak Exercise ST Segment (0-2):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="slope" min="0" max="2" value={formData.slope} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Slope:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Slope of the peak exercise ST segment:
+                                0: Upsloping
+                                1: Flat
+                                2: Downsloping
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="slope" min="0" max="2" value={formData.slope} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Number of Major Vessels Colored by Fluoroscopy (0-4):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="ca" min="0" max="4" value={formData.ca} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Number of Major Vessels Colored by Fluoroscopy:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Number of major vessels (0-4) colored by fluoroscopy
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="ca" min="0" max="4" value={formData.ca} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
-                        Thal (0-3):
-                        <input className='p-2 rounded-lg ml-auto' type="number" name="thal" min="0" max="3" value={formData.thal} onChange={handleInputChange} />
+                        <div className='font-extrabold'>
+                            Thal:
+                            <div className='font-extralight text-gray-600 text-sm'>
+                                Thalium stress test result:
+                                0: Normal
+                                1: Fixed defect
+                                2: Reversible defect
+                                3: Not described
+                            </div>
+                        </div>
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="thal" min="0" max="3" value={formData.thal} onChange={handleInputChange} />
                     </div>
 
 
@@ -164,7 +243,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                             {result && (
                                                 <div>
                                                     {result.probabilities.map((probability, index) => (
-                                                        <div>
+                                                        <div key={index}>
                                                             {probability ? (
                                                                 probability.toString().split('.').pop()?.trim().length === 1
                                                                     ? `This probablity that you have heart disease is ${probability.toString().split('.').pop()?.trim()}0%`
