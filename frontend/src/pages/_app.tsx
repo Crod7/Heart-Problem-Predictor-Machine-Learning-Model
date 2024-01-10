@@ -1,6 +1,5 @@
 import '@/src/styles/globals.css';
 import React from 'react';
-import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { AppProps } from 'next/app'; // Needed for typeScript
 import { Provider as ReduxProvider } from 'react-redux'; // Import Redux Provider
 import { ColorModeScript } from '@chakra-ui/react';
@@ -15,11 +14,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
 
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <UserProvider>
-        <ReduxProvider store={store}>
-          <Component {...pageProps} />
-        </ReduxProvider>
-      </UserProvider>
+      <ReduxProvider store={store}>
+        <Component {...pageProps} />
+      </ReduxProvider>
 
     </ChakraProvider>
 

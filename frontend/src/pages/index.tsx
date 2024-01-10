@@ -9,7 +9,6 @@ export default function BasePage() {
     // Redux
     let loadingScreen = useSelector((state: any) => state.loadingScreen.loadingScreen);
 
-    // If user logged in and has a budget created
     return (
         <div>
             {loadingScreen && (
