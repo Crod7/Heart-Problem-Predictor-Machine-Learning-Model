@@ -73,14 +73,14 @@ const HeartDiseasePrediction: React.FC = () => {
 
     return (
         <div>
-            <div className='text-5xl text-center p-6 font-extrabold'>Heart Disease Prediction Model</div>
+            <div className='text-3xl text-center p-6 font-extrabold'>Heart Disease Prediction Model</div>
             <div className='flex p-8'>
                 <div className='w-[50%] min-w-[600px]'>
                     <div className='py-1 px-2 flex'>
                         <div className='font-extrabold'>
                             Age:
                             <div className='font-extralight text-gray-600 text-sm'>
-                                Age of the patient in years
+                                Age of the patient in years. Typically this is around 35-70 however, any age can be submitted.
                             </div>
                         </div>
 
@@ -271,9 +271,6 @@ const HeartDiseasePrediction: React.FC = () => {
                 </div>
 
             </div>
-
-
-
         </div>
     );
 };
