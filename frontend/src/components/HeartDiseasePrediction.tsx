@@ -222,7 +222,7 @@ const HeartDiseasePrediction: React.FC = () => {
 
 
                 </div>
-                <div className='w-full flex items-center justify-center px-10'>
+                <div className='w-full px-10 items-center'>
                     <div className='bg-blue-900 p-10 rounded-xl'>
                         <div className='text-3xl font-extrabold py-4'>Model Prediction</div>
                         {result && (
