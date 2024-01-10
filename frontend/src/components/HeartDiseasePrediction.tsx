@@ -83,7 +83,7 @@ const HeartDiseasePrediction: React.FC = () => {
                             </div>
                         </div>
 
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="age" value={formData.age} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="age" value={formData.age} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -93,7 +93,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 Gender of the patient (0 = male, 1 = female)
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="sex" min="0" max="1" value={formData.sex} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="sex" min="0" max="1" value={formData.sex} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -107,7 +107,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 3: Asymptomatic
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="chest_pain" min="0" max="3" value={formData.chest_pain} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="chest_pain" min="0" max="3" value={formData.chest_pain} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -117,7 +117,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 Resting blood pressure in mm Hg (100-150)
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="resting_blood_pressure" min="100" max="150" value={formData.resting_blood_pressure} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="resting_blood_pressure" min="100" max="150" value={formData.resting_blood_pressure} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -127,7 +127,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 Serum cholesterol in mg/dl (130-350)
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="chol" min="130" max="350" value={formData.chol} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="chol" min="130" max="350" value={formData.chol} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -137,7 +137,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 Fasting blood sugar level, categorized as above 120 mg/dl (1 = true, 0 = false)
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="fbs" min="0" max="1" value={formData.fbs} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="fbs" min="0" max="1" value={formData.fbs} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -150,7 +150,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 2: Showing probable or definite left ventricular hypertrophy
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="rest_ecg" min="0" max="1" value={formData.rest_ecg} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="rest_ecg" min="0" max="1" value={formData.rest_ecg} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -160,7 +160,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 Maximum heart rate achieved during a stress test (80-200)
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="thalach" min="80" max="200" value={formData.thalach} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="thalach" min="80" max="200" value={formData.thalach} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -170,7 +170,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 Exercise-induced angina (1 = yes, 0 = no)
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="exang" min="0" max="1" value={formData.exang} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="exang" min="0" max="1" value={formData.exang} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -179,7 +179,7 @@ const HeartDiseasePrediction: React.FC = () => {
                             <div className='font-extralight text-gray-600 text-sm'>
                                 ST depression induced by exercise relative to rest (0.0-3.5)                            </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="oldpeak" step="0.1" min="0.0" max="3.5" value={formData.oldpeak} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="oldpeak" step="0.1" min="0.0" max="3.5" value={formData.oldpeak} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -192,7 +192,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 2: Downsloping
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="slope" min="0" max="2" value={formData.slope} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="slope" min="0" max="2" value={formData.slope} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -202,7 +202,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 Number of major vessels (0-4) colored by fluoroscopy
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="ca" min="0" max="4" value={formData.ca} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="ca" min="0" max="4" value={formData.ca} onChange={handleInputChange} />
                     </div>
 
                     <div className='py-1 px-2 flex'>
@@ -216,7 +216,7 @@ const HeartDiseasePrediction: React.FC = () => {
                                 3: Not described
                             </div>
                         </div>
-                        <input className='p-2 rounded-lg ml-auto max-h-[40px]' type="number" name="thal" min="0" max="3" value={formData.thal} onChange={handleInputChange} />
+                        <input className='p-2 rounded-lg ml-auto max-h-[40px] min-w-[80px]' type="number" name="thal" min="0" max="3" value={formData.thal} onChange={handleInputChange} />
                     </div>
 
 
@@ -246,8 +246,8 @@ const HeartDiseasePrediction: React.FC = () => {
                                                         <div key={index}>
                                                             {probability ? (
                                                                 probability.toString().split('.').pop()?.trim().length === 1
-                                                                    ? `This probablity that you have heart disease is ${probability.toString().split('.').pop()?.trim()}0%`
-                                                                    : `This probablity that you have heart disease is ${probability.toString().split('.').pop()?.trim()}%.`
+                                                                    ? `The probablity that you have heart disease is ${probability.toString().split('.').pop()?.trim()}0%`
+                                                                    : `The probablity that you have heart disease is ${probability.toString().split('.').pop()?.trim()}%.`
                                                             ) : (
                                                                 'N/A'
                                                             )}
