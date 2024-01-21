@@ -266,6 +266,9 @@ const HeartDiseasePrediction: React.FC = () => {
                             <button className='border py-3 px-8 rounded-lg bg-green-600 font-bold' type="button" onClick={predict}>
                                 Predict
                             </button>
+                            <div className='py-4 font-extralight'>
+                                Please allow up to 1 minute for server to warm up. Only on first prediction.
+                            </div>
                         </div>
                     </div>
                 </div>
